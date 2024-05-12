@@ -35,9 +35,9 @@ def input_image_setup(uploaded_file):
 ##initialize our streamlit app
 
 
-st.set_page_config(page_title="uHEALTHY")
+st.set_page_config(page_title="Fitgen")
 
-st.header("uHEALTHY")
+st.header("FitGenious")
 input=st.text_input("Input Prompt: ",key="input")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 image=""   
@@ -49,7 +49,7 @@ if uploaded_file is not None:
 submit=st.button("Help me")
 
 input_prompt="""
-        you are Tejas an expert gym trainer and expert dietician,
+        you are Fitgen an expert gym trainer and expert dietician,
         give body fat percentage from image
         tell about what fitness goal should be followed from image
         tell full workout plan according to fitness goal
