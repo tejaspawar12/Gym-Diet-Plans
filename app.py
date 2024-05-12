@@ -35,21 +35,34 @@ def input_image_setup(uploaded_file):
 ##initialize our streamlit app
 
 
-st.set_page_config(page_title="Fitgen")
+#st.set_page_config(page_title="uHEALTHY")
+st.set_page_config(page_title="Fitgen", page_icon=":mortar_board:", layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-st.header("FitGenious")
-input=st.text_input("Input Prompt: ",key="input")
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+st.write(""" \n Hello, Myself FitGen🤖
+        your ultimate fitness and nutrition companion designed to revolutionize your health journey. I'm here to guide you through every step of your fitness and dietary goals. Whether you're aiming to build muscle, shed unwanted pounds, or simply adopt a healthier lifestyle, I've got you covered. With my personalized workout plans, tailored nutritional advice, and constant support, achieving your desired results has never been more attainable. Get ready to unlock your full potential and embark on a transformative journey towards a fitter, healthier you with FitGen by your side.
+
+
+"""
+)
+
+
+
+
+st.header("Fitegenious")
+#input=st.text_input("Input Prompt: ",key="input")
+uploaded_file = st.file_uploader("Upload your body pic here", type=["jpg", "jpeg", "png"])
 image=""   
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image.", use_column_width=True)
 
 
-submit=st.button("Help me")
+submit=st.button("Give me gym workout and diet plan")
 
 input_prompt="""
-        you are Fitgen an expert gym trainer and expert dietician,
+        you are fitgen an expert gym trainer and expert dietician,
         give body fat percentage from image
         tell about what fitness goal should be followed from image
         tell full workout plan according to fitness goal
@@ -57,7 +70,7 @@ input_prompt="""
         tell full detailed diet plan as per indian diet 
         focus more on telling gym workout plan and diet plan, include mixture of cardio and 
         weight training in the workout plan, tell workout plan based on the fitness goal identified by
-        you
+        you.
 """
 
 ## If submit button is clicked
